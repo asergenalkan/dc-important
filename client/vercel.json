@@ -1,0 +1,24 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://talknow3-production.up.railway.app/api/:path*"
+    },
+    {
+      "source": "/socket.io/:path*",
+      "destination": "wss://talknow3-production.up.railway.app/socket.io/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_CLERK_PUBLISHABLE_KEY": "pk_test_bmV1dHJhbC1lbGVwaGFudC0yOC5jbGVyay5hY2NvdW50cy5kZXYk",
+    "VITE_API_URL": "https://talknow3-production.up.railway.app",
+    "VITE_GIPHY_API_KEY": "Y1VoAtRDepH3OGXkj46ZGndiPOF2Ybur"
+  }
+}
